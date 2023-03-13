@@ -1,0 +1,67 @@
+{
+  "name": "@jhnnsrs/arkitekt",
+  "version": "0.0.6",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "mikro": "graphql-codegen --config mikro.yml",
+    "p": "yarn publish --access public"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/arkitekt.umd.js",
+  "module": "./dist/arkitekt.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/arkitekt.mjs",
+      "require": "./dist/arkitekt.umd.js"
+    }
+  },
+  "devDependencies": {
+    "@apollo/client": "^3.7.10",
+    "@graphql-codegen/add": "^3.2.1",
+    "@graphql-codegen/cli": "^2.8.1",
+    "@graphql-codegen/fragment-matcher": "^3.3.0",
+    "@graphql-codegen/introspection": "^2.2.0",
+    "@graphql-codegen/typescript": "^2.7.1",
+    "@graphql-codegen/typescript-operations": "^2.5.1",
+    "@graphql-codegen/typescript-react-apollo": "^3.3.1",
+    "@jhnnsrs/fakts": "^0.1.1",
+    "@jhnnsrs/herre": "^0.0.4",
+    "@jhnnsrs/mikro": "^0.0.8",
+    "@testing-library/react": "^13.4.0",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^2.1.0",
+    "apollo-upload-client": "^17.0.0",
+    "graphql": "^16.6.0",
+    "happy-dom": "^6.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router": "^6.4.3",
+    "react-router-dom": "^6.9.0",
+    "subscriptions-transport-ws": "^0.11.0",
+    "typescript": "^4.6.4",
+    "vite": "^3.1.0",
+    "vite-plugin-dts": "^1.6.3",
+    "vitest": "^0.23.4"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router": "^6.4.3",
+    "react-router-dom": "^6.4.3"
+  },
+  "dependencies": {
+    "@jhnnsrs/datalayer": "^0.0.4",
+    "@jhnnsrs/fakts": "^0.1.1",
+    "@jhnnsrs/herre": "^0.0.4",
+    "@jhnnsrs/mikro": "^0.0.8",
+    "cancelable-promise": "^4.3.0"
+  }
+}
