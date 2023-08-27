@@ -1,6 +1,6 @@
 {
   "name": "@jhnnsrs/arkitekt",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "license": "MIT",
   "scripts": {
     "dev": "vite",
@@ -15,11 +15,6 @@
   ],
   "module": "./dist/arkitekt.mjs",
   "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/arkitekt.mjs"
-    }
-  },
   "devDependencies": {
     "@apollo/client": "^3.7.10",
     "@graphql-codegen/add": "^3.2.1",
