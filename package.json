@@ -1,6 +1,6 @@
 {
   "name": "@jhnnsrs/arkitekt",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "license": "MIT",
   "scripts": {
     "dev": "vite",
@@ -58,10 +58,11 @@
     "react-router-dom": "^6.4.3"
   },
   "dependencies": {
-    "@jhnnsrs/datalayer": "^0.0.4",
-    "@jhnnsrs/fakts": "^0.1.1",
-    "@jhnnsrs/herre": "^0.0.4",
+    "@jhnnsrs/datalayer": "^0.0.8",
+    "@jhnnsrs/fakts": "^0.1.16",
+    "@jhnnsrs/herre": "^0.0.11",
     "@jhnnsrs/mikro": "^0.0.8",
+    "@jhnnsrs/rekuest": "^0.0.2",
     "cancelable-promise": "^4.3.0"
   }
 }
