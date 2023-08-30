@@ -1,6 +1,6 @@
 {
   "name": "@jhnnsrs/arkitekt",
-  "version": "0.0.33",
+  "version": "0.0.34",
   "license": "MIT",
   "scripts": {
     "dev": "vite",
@@ -47,8 +47,7 @@
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router": "^6.4.3",
-    "react-router-dom": "^6.4.3"
+    "react-router": "^6.4.3"
   },
   "dependencies": {
     "@jhnnsrs/datalayer": "^0.0.8",
