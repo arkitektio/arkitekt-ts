@@ -4,14 +4,16 @@ import dts from "vite-plugin-dts";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), dts()],
+  plugins: [react(), dts({ rollupTypes: true })],
   server: {
-    port: 5634,
+    port: 6789,
+    strictPort: true,
   },
   build: {
     lib: {
       entry: "src/arkitekt/index.tsx",
       name: "arkitekt",
+      formats: ["es"],
     },
 
     rollupOptions: {
@@ -22,6 +24,7 @@ export default defineConfig({
         "@jhnnsrs/mikro",
         "@jhnnsrs/fakts",
         "@jhnnsrs/herre",
+        "@jhnnsrs/rekuest",
         "@jhnnsrs/datalayer",
       ],
       output: {

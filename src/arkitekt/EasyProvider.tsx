@@ -1,11 +1,14 @@
-import { Manifest } from "./AppContext";
-import { AppProvider } from "./AppProvider";
+import { DatalayerProvider } from "@jhnnsrs/datalayer";
 import { FaktsProvider } from "@jhnnsrs/fakts";
 import { HerreProvider } from "@jhnnsrs/herre";
 import { MikroProvider } from "@jhnnsrs/mikro";
-import { MikroAutoConfigure } from "./autos/MikroAutoConfigure";
-import { DatalayerProvider } from "@jhnnsrs/datalayer";
-import { DatalayerAutoConfigure } from "./autos/DatalayerAutoConfigure";
+import {
+  PostmanProvider,
+  RekuestProvider,
+  WidgetRegistryProvider,
+} from "@jhnnsrs/rekuest";
+import { Manifest } from "./AppContext";
+import { AppProvider } from "./AppProvider";
 
 export type EasyProviderProps = {
   manifest: Manifest;
@@ -17,14 +20,15 @@ export const EasyProvider = ({ manifest, children }: EasyProviderProps) => {
     <AppProvider manifest={manifest}>
       <FaktsProvider>
         <HerreProvider>
-          <DatalayerProvider>
-            <MikroProvider>
-              <MikroAutoConfigure />
-              <DatalayerAutoConfigure />
-
-              {children}
-            </MikroProvider>
-          </DatalayerProvider>
+          <RekuestProvider>
+            <PostmanProvider>
+              <WidgetRegistryProvider>
+                <DatalayerProvider>
+                  <MikroProvider>{children}</MikroProvider>
+                </DatalayerProvider>
+              </WidgetRegistryProvider>
+            </PostmanProvider>
+          </RekuestProvider>
         </HerreProvider>
       </FaktsProvider>
     </AppProvider>

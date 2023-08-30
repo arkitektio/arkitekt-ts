@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.css";
-import { EasyProvider, useApp } from "./arkitekt";
+import { EasyGuard, EasyProvider, useApp } from "./arkitekt";
+import { AutoConfiguration } from "./arkitekt/autos/AutoConfiguration";
 import { Callback } from "./arkitekt/components/Callback";
-import { EasyGuard } from "./arkitekt/components/EasyGuard";
-import { LoginButton } from "./arkitekt/components/LoginButton";
-import { Images } from "./contrib/Images";
+import { RekuestGuard } from "@jhnnsrs/rekuest";
 
 export const Test = () => {
   const { manifest } = useApp();
@@ -13,9 +12,8 @@ export const Test = () => {
   return (
     <>
       <h1>{manifest.identifier}</h1>
-      <EasyGuard>
-        <Images />
-      </EasyGuard>
+      <EasyGuard>Hallo</EasyGuard>
+      <RekuestGuard>oinoin</RekuestGuard>
     </>
   );
 };
@@ -27,14 +25,19 @@ function App() {
     <div className="App">
       <EasyProvider
         manifest={{
-          identifier: "github.io.jhnnsrs.arkitekt",
           version: "latest",
+          identifier: "github.io.jhnnsrs.orkestrator",
         }}
       >
+        <AutoConfiguration
+          endpoints={["100.91.169.37:8000"]}
+          mikroPossibleTypes={{}}
+          rekuestPossibleTypes={{}}
+        />
         <Router>
           <Routes>
             <Route path="/" element={<Test />} />
-            <Route path="/callback" element={<Callback autoClose={true} />} />
+            <Route path="/callback" element={<Callback />} />
           </Routes>
         </Router>
       </EasyProvider>
