@@ -1,6 +1,6 @@
 {
   "name": "@jhnnsrs/arkitekt",
-  "version": "0.0.30",
+  "version": "0.0.31",
   "license": "MIT",
   "scripts": {
     "dev": "vite",
@@ -54,7 +54,7 @@
     "@jhnnsrs/datalayer": "^0.0.8",
     "@jhnnsrs/fakts": "^0.0.17",
     "@jhnnsrs/fluss": "^0.0.2",
-    "@jhnnsrs/herre": "^0.0.11",
+    "@jhnnsrs/herre": "^0.0.12",
     "@jhnnsrs/mikro": "^0.0.9",
     "@jhnnsrs/rekuest": "^0.0.15",
     "cancelable-promise": "^4.3.0"
