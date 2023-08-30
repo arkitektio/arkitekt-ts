@@ -1,6 +1,6 @@
 {
   "name": "@jhnnsrs/arkitekt",
-  "version": "0.0.7",
+  "version": "0.0.28",
   "license": "MIT",
   "scripts": {
     "dev": "vite",
@@ -13,15 +13,8 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/arkitekt.umd.js",
   "module": "./dist/arkitekt.mjs",
   "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/arkitekt.mjs",
-      "require": "./dist/arkitekt.umd.js"
-    }
-  },
   "devDependencies": {
     "@apollo/client": "^3.7.10",
     "@graphql-codegen/add": "^3.2.1",
@@ -59,9 +52,10 @@
   },
   "dependencies": {
     "@jhnnsrs/datalayer": "^0.0.8",
-    "@jhnnsrs/fakts": "^0.1.10",
-    "@jhnnsrs/herre": "^0.0.9",
+    "@jhnnsrs/fakts": "^0.1.16",
+    "@jhnnsrs/herre": "^0.0.11",
     "@jhnnsrs/mikro": "^0.0.8",
+    "@jhnnsrs/rekuest": "^0.0.14",
     "cancelable-promise": "^4.3.0"
   }
 }

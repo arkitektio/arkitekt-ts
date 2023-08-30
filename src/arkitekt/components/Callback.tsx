@@ -1,25 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import { useHerre } from "@jhnnsrs/herre";
 
-export interface CallbackProps {
-  children?: React.ReactNode;
-  autoClose?: boolean;
-}
+export interface CallbackProps {}
 
-export const Callback: React.FC<CallbackProps> = ({ children, autoClose }) => {
+export const Callback: React.FC<CallbackProps> = (props) => {
   const [params, setParams] = useSearchParams();
-  const { setCode } = useHerre();
 
   useEffect(() => {
     let code = params.get("code");
+    console.log(code);
     if (code) {
-      setCode(code);
-      if (autoClose) {
-        window.close();
-      }
+      localStorage.setItem("herre-code", code);
+      window.close();
     }
   }, []);
 
-  return <>{children || "Signing in....."}</>;
+  return <>Signing in.....</>;
 };
