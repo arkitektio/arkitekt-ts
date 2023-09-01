@@ -4,9 +4,9 @@ import dts from "vite-plugin-dts";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), dts({ rollupTypes: true })],
+  plugins: [dts({ rollupTypes: true }), react()],
   server: {
-    port: 6789,
+    port: 7890,
     strictPort: true,
   },
   build: {
@@ -20,9 +20,11 @@ export default defineConfig({
       external: [
         "react",
         "react-dom",
+        "react-router-dom",
         "cancelable-promise",
         "@jhnnsrs/mikro",
         "@jhnnsrs/fakts",
+        "@jhnnsrs/fluss",
         "@jhnnsrs/herre",
         "@jhnnsrs/rekuest",
         "@jhnnsrs/datalayer",
@@ -31,6 +33,13 @@ export default defineConfig({
         globals: {
           react: "React",
           "react-dom": "ReactDOM",
+          "cancelable-promise": "CancelablePromise",
+          "@jhnnsrs/mikro": "Mikro",
+          "@jhnnsrs/fakts": "Fakts",
+          "@jhnnsrs/fluss": "Fluss",
+          "@jhnnsrs/herre": "Herre",
+          "@jhnnsrs/rekuest": "Rekuest",
+          "@jhnnsrs/datalayer": "Datalayer",
         },
       },
     },

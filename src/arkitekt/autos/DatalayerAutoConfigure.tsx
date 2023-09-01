@@ -8,19 +8,28 @@ import {
   RequestDocument,
   RequestQuery,
 } from "../api/mikro/graphql";
+import { DocumentNode } from "graphql";
 
-export const DatalayerAutoConfigure: React.FC<{}> = (props) => {
+export type DatalayerAutoConfigureProps = {
+  requestDocument?: DocumentNode;
+  presignDocument?: DocumentNode;
+};
+
+export const DatalayerAutoConfigure: React.FC<{}> = ({
+  requestDocument = RequestDocument,
+  presignDocument = PresignDocument,
+}: DatalayerAutoConfigureProps) => {
   const { client } = useMikro();
   const { fakts } = useFakts();
   const { configure } = useDatalayer();
 
   useEffect(() => {
-    if (client) {
+    if (client && fakts && fakts.minio) {
       configure({
         endpointUrl: fakts.minio.endpoint_url,
         credentialsRetriever: async () => {
           let x = await client.query<RequestQuery>({
-            query: RequestDocument,
+            query: requestDocument,
             variables: {},
           });
           if (!x.data.request) {
@@ -30,7 +39,7 @@ export const DatalayerAutoConfigure: React.FC<{}> = (props) => {
         },
         presign: async (key: string) => {
           let x = await client.mutate<PresignMutation>({
-            mutation: PresignDocument,
+            mutation: presignDocument,
             variables: {
               file: key,
             },
@@ -42,7 +51,7 @@ export const DatalayerAutoConfigure: React.FC<{}> = (props) => {
         },
       });
     }
-  }, [client]);
+  }, [client, requestDocument, presignDocument, fakts]);
 
   return <> </>;
 };

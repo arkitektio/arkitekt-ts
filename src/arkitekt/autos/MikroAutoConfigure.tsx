@@ -6,22 +6,29 @@ import { PossibleTypesMap } from "@apollo/client";
 
 export type MikroAutoConfigureProps = {
   possibleTypes?: PossibleTypesMap;
+  key?: string;
 };
 
-export const MikroAutoConfigure = (props: MikroAutoConfigureProps) => {
+export const MikroAutoConfigure = ({
+  possibleTypes,
+  key = "mikro",
+}: MikroAutoConfigureProps) => {
   const { configure } = useMikro();
   const { token } = useHerre();
   const { fakts } = useFakts();
 
   useEffect(() => {
-    if (token && fakts.mikro) {
+    let mikro = fakts?.[key];
+    if (token && mikro) {
       configure({
-        secure: fakts.mikro.secure,
-        wsEndpointUrl: fakts.mikro.ws_endpoint_url,
-        endpointUrl: fakts.mikro.endpoint_url,
-        possibleTypes: props.possibleTypes,
+        secure: mikro.secure,
+        wsEndpointUrl: mikro.ws_endpoint_url,
+        endpointUrl: mikro.endpoint_url,
+        possibleTypes: possibleTypes,
         retrieveToken: () => token,
       });
+    } else {
+      configure();
     }
   }, [token, fakts]);
 

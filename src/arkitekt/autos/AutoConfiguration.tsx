@@ -1,28 +1,41 @@
-import { RekuestAutoConfigure } from "./RekuestAutoConfigure";
-import { MikroAutoConfigure } from "./MikroAutoConfigure";
+import {
+  RekuestAutoConfigure,
+  RekuestAutoConfigureProps,
+} from "./RekuestAutoConfigure";
+import {
+  MikroAutoConfigure,
+  MikroAutoConfigureProps,
+} from "./MikroAutoConfigure";
 import { DatalayerAutoConfigure } from "./DatalayerAutoConfigure";
 import { WellKnownDiscovery } from "@jhnnsrs/fakts";
 import { MikroGuard } from "@jhnnsrs/mikro";
 import { MikroWard } from "../wards/MikroWard";
 import { RekuestGuard } from "@jhnnsrs/rekuest";
 import { RekuestWard } from "../wards/RekuestWard";
-import { PossibleTypesMap } from "@apollo/client";
+import {
+  FlussAutoConfigure,
+  FlussAutoConfigureProps,
+} from "./FlussAutoConfgiure";
 
 export const AutoConfiguration = (props: {
-  endpoints: string[];
-  rekuestPossibleTypes: PossibleTypesMap;
-  mikroPossibleTypes: PossibleTypesMap;
+  wellKnownEndpoints?: string[];
+  rekuest?: RekuestAutoConfigureProps;
+  mikro?: MikroAutoConfigureProps;
+  fluss?: FlussAutoConfigureProps;
 }) => {
   return (
     <>
-      <RekuestAutoConfigure possibleTypes={props.rekuestPossibleTypes} />
-      <MikroAutoConfigure possibleTypes={props.mikroPossibleTypes} />
+      <RekuestAutoConfigure {...props.rekuest} />
+      <MikroAutoConfigure {...props.mikro} />
+      <FlussAutoConfigure {...props.fluss} />
       <DatalayerAutoConfigure />
-      <WellKnownDiscovery endpoints={props.endpoints} />
-      <MikroGuard>
+      {props.wellKnownEndpoints && (
+        <WellKnownDiscovery endpoints={props.wellKnownEndpoints} />
+      )}
+      <MikroGuard fallback={<></>}>
         <MikroWard />
       </MikroGuard>
-      <RekuestGuard>
+      <RekuestGuard fallback={<></>}>
         <RekuestWard />
       </RekuestGuard>
     </>

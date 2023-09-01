@@ -1,7 +1,6 @@
 import { Fakts, useFakts } from "@jhnnsrs/fakts";
-import { useHerre } from "@jhnnsrs/herre";
-import { HerreEndpoint, HerreGrant } from "@jhnnsrs/herre/dist/types";
-import CancelablePromise from "cancelable-promise";
+import { useHerre, HerreEndpoint, HerreGrant } from "@jhnnsrs/herre";
+import { CancelablePromise } from "cancelable-promise";
 import { useCallback, useState } from "react";
 
 const defaultClassName =

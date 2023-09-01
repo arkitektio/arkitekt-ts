@@ -3,7 +3,15 @@ import { AppProvider, AppProviderProps } from "./AppProvider";
 import { EasyProvider, EasyProviderProps } from "./EasyProvider";
 import { Callback, CallbackProps } from "./components/Callback";
 import { LoginButton, LoginButtonProps } from "./components/LoginButton";
-import { KonfigureButtonProps } from "./components/KonfigureButtons";
+import { LogoutButton, LogoutButtonProps } from "./components/LogoutButton";
+import {
+  ConnectButtons,
+  ConnectButtonsProps,
+} from "./components/ConnectButtons";
+import {
+  UnconnectButton,
+  UnconnectButtonProps,
+} from "./components/UnconnectButton";
 import { AutoConfiguration } from "./autos/AutoConfiguration";
 import { AppGuard } from "./AppGuard";
 import { EasyGuard, EasyGuardProps } from "./EasyGuard";
@@ -14,6 +22,9 @@ export {
   useApp,
   AppProvider,
   EasyProvider,
+  ConnectButtons,
+  LogoutButton,
+  UnconnectButton,
   Callback,
   EasyGuard,
   AutoConfiguration,
@@ -27,5 +38,7 @@ export type {
   CallbackProps,
   EasyGuardProps,
   LoginButtonProps,
-  KonfigureButtonProps,
+  LogoutButtonProps,
+  ConnectButtonsProps,
+  UnconnectButtonProps,
 };

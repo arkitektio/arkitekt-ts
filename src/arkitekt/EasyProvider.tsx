@@ -2,6 +2,7 @@ import { DatalayerProvider } from "@jhnnsrs/datalayer";
 import { FaktsProvider } from "@jhnnsrs/fakts";
 import { HerreProvider } from "@jhnnsrs/herre";
 import { MikroProvider } from "@jhnnsrs/mikro";
+import { FlussProvider } from "@jhnnsrs/fluss";
 import {
   PostmanProvider,
   RekuestProvider,
@@ -21,13 +22,15 @@ export const EasyProvider = ({ manifest, children }: EasyProviderProps) => {
       <FaktsProvider>
         <HerreProvider>
           <RekuestProvider>
-            <PostmanProvider>
-              <WidgetRegistryProvider>
-                <DatalayerProvider>
-                  <MikroProvider>{children}</MikroProvider>
-                </DatalayerProvider>
-              </WidgetRegistryProvider>
-            </PostmanProvider>
+            <FlussProvider>
+              <PostmanProvider>
+                <WidgetRegistryProvider>
+                  <DatalayerProvider>
+                    <MikroProvider>{children}</MikroProvider>
+                  </DatalayerProvider>
+                </WidgetRegistryProvider>
+              </PostmanProvider>
+            </FlussProvider>
           </RekuestProvider>
         </HerreProvider>
       </FaktsProvider>

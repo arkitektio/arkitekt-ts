@@ -6,22 +6,29 @@ import { useRekuest } from "@jhnnsrs/rekuest";
 
 export type RekuestAutoConfigureProps = {
   possibleTypes?: PossibleTypesMap;
+  key?: string;
 };
 
-export const RekuestAutoConfigure = (props: RekuestAutoConfigureProps) => {
+export const RekuestAutoConfigure = ({
+  possibleTypes,
+  key = "rekuest",
+}: RekuestAutoConfigureProps) => {
   const { configure } = useRekuest();
   const { token } = useHerre();
   const { fakts } = useFakts();
 
   useEffect(() => {
-    if (token && fakts.rekuest) {
+    let rekuest = fakts?.[key];
+    if (token && rekuest) {
       configure({
-        secure: fakts.rekuest.secure,
-        wsEndpointUrl: fakts.rekuest.ws_endpoint_url,
-        endpointUrl: fakts.rekuest.endpoint_url,
-        possibleTypes: props.possibleTypes,
+        secure: rekuest.secure,
+        wsEndpointUrl: rekuest.ws_endpoint_url,
+        endpointUrl: rekuest.endpoint_url,
+        possibleTypes: possibleTypes,
         retrieveToken: () => token,
       });
+    } else {
+      configure();
     }
   }, [token, fakts]);
 

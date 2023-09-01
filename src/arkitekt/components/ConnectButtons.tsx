@@ -6,45 +6,45 @@ const defaultButtonClassName =
 const defaultContainerClassName =
   "mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start gap-2";
 
-export type KonfigureButtonProps = {
+export type ConnectButtonsProps = {
   containerClassName?: string;
+  onError?: (e: Error) => void;
   buttonClassName?: (e: FaktsEndpoint) => string;
   buttonLabel?: (e: FaktsEndpoint) => React.ReactNode;
-  noEndpointsLabel?: React.ReactNode;
+  noEndpointsFallback?: React.ReactNode;
 };
 
-export const KonfigureButtons = ({
+export const ConnectButtons = ({
   containerClassName = defaultContainerClassName,
+  onError = (e) => alert(e.message),
   buttonClassName = (e) => defaultButtonClassName,
   buttonLabel = (e) => `Connect to ${e.name}`,
-  noEndpointsLabel = "No endpoints available</>",
-}: KonfigureButtonProps) => {
+  noEndpointsFallback = "No endpoints available",
+}: ConnectButtonsProps) => {
   const { load, registeredEndpoints } = useFakts();
   const { manifest } = useApp();
 
   return (
     <div className={containerClassName}>
-      {registeredEndpoints.length > 0 ? (
-        registeredEndpoints.map((e, index) => (
-          <button
-            key={index}
-            type="button"
-            onClick={() =>
-              load({
-                endpoint: e,
-                manifest,
-              }).catch((e) => {
-                alert(e.message);
-              })
-            }
-            className={buttonClassName(e)}
-          >
-            {buttonLabel(e)}
-          </button>
-        ))
-      ) : (
-        <>No endpoints available</>
-      )}
+      {registeredEndpoints.length > 0
+        ? registeredEndpoints.map((e, index) => (
+            <button
+              key={index}
+              type="button"
+              onClick={() =>
+                load({
+                  endpoint: e,
+                  manifest,
+                }).catch((e) => {
+                  onError(e);
+                })
+              }
+              className={buttonClassName(e)}
+            >
+              {buttonLabel(e)}
+            </button>
+          ))
+        : noEndpointsFallback}
     </div>
   );
 };

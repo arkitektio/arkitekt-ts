@@ -1,26 +1,28 @@
 import { FaktsGuard } from "@jhnnsrs/fakts";
 import {
-  KonfigureButtonProps,
-  KonfigureButtons,
-} from "./components/KonfigureButtons";
+  ConnectButtons,
+  ConnectButtonsProps,
+} from "./components/ConnectButtons";
 import { LoginButton, LoginButtonProps } from "./components/LoginButton";
 import { HerreGuard } from "@jhnnsrs/herre";
 import { AppGuard } from "./AppGuard";
 
 export type EasyGuardProps = {
+  noAppFallback?: React.ReactNode;
   loginButtonProps?: LoginButtonProps;
-  konfigureButtonProps?: KonfigureButtonProps;
+  connectButtonProps?: ConnectButtonsProps;
   children: React.ReactNode;
 };
 
 export const EasyGuard = ({
+  noAppFallback = "App Unkonfigured",
   loginButtonProps,
-  konfigureButtonProps,
+  connectButtonProps,
   children,
 }: EasyGuardProps) => {
   return (
-    <AppGuard fallback={<>App Unkonfigured</>}>
-      <FaktsGuard fallback={<KonfigureButtons {...konfigureButtonProps} />}>
+    <AppGuard fallback={noAppFallback}>
+      <FaktsGuard fallback={<ConnectButtons {...connectButtonProps} />}>
         <HerreGuard fallback={<LoginButton {...loginButtonProps} />}>
           {children}
         </HerreGuard>
