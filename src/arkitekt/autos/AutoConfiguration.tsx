@@ -15,18 +15,21 @@ import { RekuestWard } from "../wards/RekuestWard";
 import {
   FlussAutoConfigure,
   FlussAutoConfigureProps,
-} from "./FlussAutoConfgiure";
+} from "./FlussAutoConfigure";
+import { PortAutoConfigure, PortAutoConfigureProps } from "./PortAutoConfigure";
 
 export const AutoConfiguration = (props: {
   wellKnownEndpoints?: string[];
   rekuest?: RekuestAutoConfigureProps;
   mikro?: MikroAutoConfigureProps;
   fluss?: FlussAutoConfigureProps;
+  port?: PortAutoConfigureProps;
 }) => {
   return (
     <>
       <RekuestAutoConfigure {...props.rekuest} />
       <MikroAutoConfigure {...props.mikro} />
+      <PortAutoConfigure {...props.port} />
       <FlussAutoConfigure {...props.fluss} />
       <DatalayerAutoConfigure />
       {props.wellKnownEndpoints && (

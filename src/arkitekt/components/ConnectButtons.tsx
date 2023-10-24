@@ -9,7 +9,7 @@ const defaultContainerClassName =
 export type ConnectButtonsProps = {
   containerClassName?: string;
   onError?: (e: Error) => void;
-  buttonClassName?: (e: FaktsEndpoint) => string;
+  buttonClassName?: ((e: FaktsEndpoint) => string) | string;
   buttonLabel?: (e: FaktsEndpoint) => React.ReactNode;
   noEndpointsFallback?: React.ReactNode;
 };
@@ -23,6 +23,11 @@ export const ConnectButtons = ({
 }: ConnectButtonsProps) => {
   const { load, registeredEndpoints } = useFakts();
   const { manifest } = useApp();
+
+  const buttonClassNameFunc =
+    typeof buttonClassName === "function"
+      ? buttonClassName
+      : () => buttonClassName;
 
   return (
     <div className={containerClassName}>
@@ -39,7 +44,7 @@ export const ConnectButtons = ({
                   onError(e);
                 })
               }
-              className={buttonClassName(e)}
+              className={buttonClassNameFunc(e)}
             >
               {buttonLabel(e)}
             </button>

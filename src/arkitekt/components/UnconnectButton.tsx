@@ -16,12 +16,17 @@ export const UnconnectButton = ({
   children = "Disconnect",
 }: UnconnectButtonProps) => {
   const { fakts, setFakts } = useFakts();
-  const [future, setFuture] = useState<CancelablePromise | null>(null);
   const { logout } = useHerre();
 
   return (
     <>
-      <button type="button" onClick={() => setFakts(null)}>
+      <button
+        type="button"
+        onClick={() => {
+          logout(), setFakts(null);
+        }}
+        className={className}
+      >
         {children}
       </button>
     </>

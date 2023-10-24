@@ -10,6 +10,7 @@ import {
 } from "@jhnnsrs/rekuest";
 import { Manifest } from "./AppContext";
 import { AppProvider } from "./AppProvider";
+import { PortProvider } from "@jhnnsrs/port";
 
 export type EasyProviderProps = {
   manifest: Manifest;
@@ -26,7 +27,9 @@ export const EasyProvider = ({ manifest, children }: EasyProviderProps) => {
               <PostmanProvider>
                 <WidgetRegistryProvider>
                   <DatalayerProvider>
-                    <MikroProvider>{children}</MikroProvider>
+                    <MikroProvider>
+                      <PortProvider>{children}</PortProvider>
+                    </MikroProvider>
                   </DatalayerProvider>
                 </WidgetRegistryProvider>
               </PostmanProvider>

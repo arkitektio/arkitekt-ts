@@ -11,7 +11,9 @@ export type LoginButtonProps = {
   buildGrant?: (fakts: Fakts) => Promise<HerreGrant>;
   postLogin?: () => void;
   onCancel?: () => Promise<void>;
-  className?: (helpers: { authenticating: boolean; fakts: Fakts }) => string;
+  className?:
+    | ((helpers: { authenticating: boolean; fakts: Fakts }) => string)
+    | string;
   children?: (helpers: {
     authenticating: boolean;
     fakts: Fakts;
@@ -38,6 +40,9 @@ export const LoginButton = ({
   const { fakts } = useFakts();
   const [future, setFuture] = useState<CancelablePromise | null>(null);
   const { login } = useHerre();
+
+  const classNameFunc =
+    typeof className === "function" ? className : () => className;
 
   const adaptive_login = useCallback(() => {
     return new CancelablePromise(async (resolve, reject, cancel) => {
@@ -69,7 +74,7 @@ export const LoginButton = ({
           }
         }}
         className={
-          className({ authenticating: future !== null, fakts }) ||
+          classNameFunc({ authenticating: future !== null, fakts }) ||
           defaultClassName
         }
       >

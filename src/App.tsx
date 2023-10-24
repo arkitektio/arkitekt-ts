@@ -7,9 +7,28 @@ import { Callback } from "./arkitekt/components/Callback";
 import { RekuestGuard } from "@jhnnsrs/rekuest";
 import { HerreGuard } from "@jhnnsrs/herre";
 import { LogoutButton } from "./arkitekt/components/LogoutButton";
+import { PortGuard, usePort, usePortQuery, withPort } from "@jhnnsrs/port";
+import { gql, useQuery } from "@apollo/client";
+import { useFakts } from "@jhnnsrs/fakts";
+
+const GET_DOCS = gql`
+  query GetDogs {
+    containers {
+      id
+      name
+    }
+  }
+`;
+
+const PortIsThere = () => {
+  const { data, loading } = usePortQuery(GET_DOCS);
+
+  return <h1>{JSON.stringify(data)}</h1>;
+};
 
 export const Test = () => {
   const { manifest } = useApp();
+  const { fakts } = useFakts();
 
   return (
     <>
@@ -17,6 +36,10 @@ export const Test = () => {
       <EasyGuard>Hallo</EasyGuard>
       <RekuestGuard>Rekuest</RekuestGuard>
       <HerreGuard>Herre</HerreGuard>
+      <PortGuard>
+        <PortIsThere />
+      </PortGuard>
+      {JSON.stringify(fakts)}
       <LogoutButton />
       <UnconnectButton />
     </>

@@ -6,14 +6,13 @@ import dts from "vite-plugin-dts";
 export default defineConfig({
   plugins: [dts({ rollupTypes: true }), react()],
   server: {
-    port: 7890,
-    strictPort: true,
+    host: "127.0.0.1",
   },
   build: {
     lib: {
       entry: "src/arkitekt/index.tsx",
       name: "arkitekt",
-      formats: ["es"],
+      formats: ["es", "cjs"],
     },
 
     rollupOptions: {
@@ -24,6 +23,7 @@ export default defineConfig({
         "cancelable-promise",
         "@jhnnsrs/mikro",
         "@jhnnsrs/fakts",
+        "@jhnnsrs/port",
         "@jhnnsrs/fluss",
         "@jhnnsrs/herre",
         "@jhnnsrs/rekuest",
@@ -36,6 +36,7 @@ export default defineConfig({
           "cancelable-promise": "CancelablePromise",
           "@jhnnsrs/mikro": "Mikro",
           "@jhnnsrs/fakts": "Fakts",
+          "@jhnnsrs/port": "Port",
           "@jhnnsrs/fluss": "Fluss",
           "@jhnnsrs/herre": "Herre",
           "@jhnnsrs/rekuest": "Rekuest",
