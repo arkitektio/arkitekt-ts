@@ -1,6 +1,6 @@
 {
   "name": "@jhnnsrs/arkitekt",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "license": "MIT",
   "scripts": {
     "dev": "vite",
@@ -50,7 +50,7 @@
     "@jhnnsrs/datalayer": "^0.0.8",
     "@jhnnsrs/fakts": "^0.0.17",
     "@jhnnsrs/fluss": "^0.0.2",
-    "@jhnnsrs/herre": "^0.0.12",
+    "@jhnnsrs/herre": "^0.0.14",
     "@jhnnsrs/mikro": "^0.0.9",
     "@jhnnsrs/port": "^0.0.4",
     "@jhnnsrs/rekuest": "^0.0.15",
