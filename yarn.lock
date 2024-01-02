@@ -1200,10 +1200,10 @@
     graphql "16.6.0"
     subscriptions-transport-ws "^0.11.0"
 
-"@jhnnsrs/herre@^0.0.12":
-  version "0.0.12"
-  resolved "https://registry.yarnpkg.com/@jhnnsrs/herre/-/herre-0.0.12.tgz#83af043aad98e6888535337848044cef928bb4de"
-  integrity sha512-Xk2pHJ6pdLdBZwPtTj5srhjUJ8Qy/BrxEfCMjCgM9Eoi6+NTyPwIhLHOD90RfzSW/1WkTllA1hIdPBClW51o+A==
+"@jhnnsrs/herre@^0.0.14":
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/@jhnnsrs/herre/-/herre-0.0.14.tgz#a2b617be5a0c92579a6ca056d2a7afdaeb03e144"
+  integrity sha512-OaHn1Kx6EUYV2Lj+fnQhepa+feZ0kkt8eXqdc0rZQFDwnsptBbYJLnM32Xy9YbGMLmP96RSFqCKynXG4xfRyaw==
   dependencies:
     cancelable-promise "^4.3.1"
     crypto-js "^4.1.1"
