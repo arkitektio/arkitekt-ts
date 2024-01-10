@@ -1216,6 +1216,13 @@
     apollo-upload-client "^17.0.0"
     subscriptions-transport-ws "^0.11.0"
 
+"@jhnnsrs/port@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@jhnnsrs/port/-/port-0.0.4.tgz#77d3b7c3b0de991d3b8dc46b68b6a8cec833de65"
+  integrity sha512-7PfzlCATm2aagoH9tV4Mc9ZNJxCOcS9ZwYDwZ/bJ9sIAG9R9s1Qnj1x6LWZCAhRngJgtCfwtjjFAWeCBp3G1LA==
+  dependencies:
+    subscriptions-transport-ws "^0.11.0"
+
 "@jhnnsrs/rekuest@^0.0.15":
   version "0.0.15"
   resolved "https://registry.yarnpkg.com/@jhnnsrs/rekuest/-/rekuest-0.0.15.tgz#494cc0817fcd2322376b003d8b4b3b7d03deaf2d"
