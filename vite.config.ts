@@ -6,8 +6,9 @@ import dts from "vite-plugin-dts";
 export default defineConfig({
   plugins: [dts({ rollupTypes: true }), react()],
   server: {
+    host: "127.0.0.1",
     port: 7890,
-    strictPort: true,
+    strictPort: false,
   },
   build: {
     lib: {

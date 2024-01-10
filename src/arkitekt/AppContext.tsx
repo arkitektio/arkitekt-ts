@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 export type Manifest = {
   version: string;
   identifier: string;
+  scopes: string[];
 };
 
 export type AppContextType = {
@@ -13,6 +14,7 @@ export const AppContext = React.createContext<AppContextType>({
   manifest: {
     version: "0.0.0",
     identifier: "unknown",
+    scopes: ["openid"]
   },
 });
 

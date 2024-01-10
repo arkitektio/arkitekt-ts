@@ -1184,12 +1184,12 @@
   dependencies:
     cancelable-promise "^4.3.0"
 
-"@jhnnsrs/fakts@^0.0.17":
-  version "0.0.17"
-  resolved "https://registry.yarnpkg.com/@jhnnsrs/fakts/-/fakts-0.0.17.tgz#c41a9e404a1bcab40e9e72132bc06807954f2750"
-  integrity sha512-kAXiMz24Y1ztwV6ixdXtUxdiIs1xfTTLQ9iVtQXSqDtV0hb/tYMYfanzdHb/dKGysA/eUzHRMYtll5o+q6iQKQ==
+"@jhnnsrs/fakts@^0.0.23":
+  version "0.0.23"
+  resolved "https://registry.yarnpkg.com/@jhnnsrs/fakts/-/fakts-0.0.23.tgz#6cb1202f45cdd468c35b9a746d76142dd510a0c4"
+  integrity sha512-w5o/1mVuli/upmAdjfBGwKMKH6oa0uvMYKgjDSlylVE+ZKxEKkGMqW8qtAQTQ3hppCeRUfJWH/PuK6Aj/ejGKw==
   dependencies:
-    cancelable-promise "^4.3.0"
+    any-signal "^4.1.1"
 
 "@jhnnsrs/fluss@^0.0.2":
   version "0.0.2"
@@ -1200,10 +1200,10 @@
     graphql "16.6.0"
     subscriptions-transport-ws "^0.11.0"
 
-"@jhnnsrs/herre@^0.0.12":
-  version "0.0.12"
-  resolved "https://registry.yarnpkg.com/@jhnnsrs/herre/-/herre-0.0.12.tgz#83af043aad98e6888535337848044cef928bb4de"
-  integrity sha512-Xk2pHJ6pdLdBZwPtTj5srhjUJ8Qy/BrxEfCMjCgM9Eoi6+NTyPwIhLHOD90RfzSW/1WkTllA1hIdPBClW51o+A==
+"@jhnnsrs/herre@^0.0.14":
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/@jhnnsrs/herre/-/herre-0.0.14.tgz#a2b617be5a0c92579a6ca056d2a7afdaeb03e144"
+  integrity sha512-OaHn1Kx6EUYV2Lj+fnQhepa+feZ0kkt8eXqdc0rZQFDwnsptBbYJLnM32Xy9YbGMLmP96RSFqCKynXG4xfRyaw==
   dependencies:
     cancelable-promise "^4.3.1"
     crypto-js "^4.1.1"
@@ -1762,6 +1762,11 @@ ansi-styles@^5.0.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-5.2.0.tgz#07449690ad45777d1924ac2abb2fc8895dba836b"
   integrity sha512-Cxwpt2SfTzTtXcfOlzGEee8O+c+MmUgGrNiBcXnuWxuFJHe6a5Hz7qwhwe5OgaSYI0IJvkLqWX1ASG+cJOkEiA==
+
+any-signal@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/any-signal/-/any-signal-4.1.1.tgz#928416c355c66899e6b2a91cad4488f0324bae03"
+  integrity sha512-iADenERppdC+A2YKbOXXB2WUeABLaM6qnpZ70kZbPZ1cZMMJ7eF+3CaYm+/PhBizgkzlvssC7QuHS30oOiQYWA==
 
 anymatch@~3.1.2:
   version "3.1.3"
@@ -3721,6 +3726,11 @@ postcss@^8.4.16:
     nanoid "^3.3.4"
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
+
+prettier@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.1.1.tgz#6ba9f23165d690b6cbdaa88cb0807278f7019848"
+  integrity sha512-22UbSzg8luF4UuZtzgiUOfcGM8s4tjBv6dJRT7j275NXsy2jb4aJa4NNveul5x4eqlF1wuhuR2RElK71RvmVaw==
 
 pretty-format@^27.0.2:
   version "27.5.1"

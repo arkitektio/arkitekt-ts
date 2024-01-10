@@ -1,6 +1,6 @@
 {
   "name": "@jhnnsrs/arkitekt",
-  "version": "0.0.36",
+  "version": "0.0.35",
   "license": "MIT",
   "scripts": {
     "dev": "vite",
@@ -31,6 +31,7 @@
     "apollo-upload-client": "^17.0.0",
     "graphql": "^16.6.0",
     "happy-dom": "^6.0.4",
+    "prettier": "^3.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.4.3",
@@ -48,9 +49,9 @@
   },
   "dependencies": {
     "@jhnnsrs/datalayer": "^0.0.8",
-    "@jhnnsrs/fakts": "^0.0.17",
+    "@jhnnsrs/fakts": "^0.0.23",
     "@jhnnsrs/fluss": "^0.0.2",
-    "@jhnnsrs/herre": "^0.0.12",
+    "@jhnnsrs/herre": "^0.0.14",
     "@jhnnsrs/mikro": "^0.0.9",
     "@jhnnsrs/rekuest": "^0.0.15",
     "cancelable-promise": "^4.3.0"
