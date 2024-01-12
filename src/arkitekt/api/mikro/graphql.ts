@@ -79,12 +79,12 @@ export function usePresignMutation(
   baseOptions?: Apollo.MutationHookOptions<
     PresignMutation,
     PresignMutationVariables
-  >
+  >,
 ) {
   const options = { ...defaultOptions, ...baseOptions };
   return Apollo.useMutation<PresignMutation, PresignMutationVariables>(
     PresignDocument,
-    options
+    options,
   );
 }
 export type PresignMutationHookResult = ReturnType<typeof usePresignMutation>;
@@ -120,21 +120,24 @@ export const RequestDocument = gql`
  * });
  */
 export function useRequestQuery(
-  baseOptions?: Apollo.QueryHookOptions<RequestQuery, RequestQueryVariables>
+  baseOptions?: Apollo.QueryHookOptions<RequestQuery, RequestQueryVariables>,
 ) {
   const options = { ...defaultOptions, ...baseOptions };
   return Apollo.useQuery<RequestQuery, RequestQueryVariables>(
     RequestDocument,
-    options
+    options,
   );
 }
 export function useRequestLazyQuery(
-  baseOptions?: Apollo.LazyQueryHookOptions<RequestQuery, RequestQueryVariables>
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    RequestQuery,
+    RequestQueryVariables
+  >,
 ) {
   const options = { ...defaultOptions, ...baseOptions };
   return Apollo.useLazyQuery<RequestQuery, RequestQueryVariables>(
     RequestDocument,
-    options
+    options,
   );
 }
 export type RequestQueryHookResult = ReturnType<typeof useRequestQuery>;

@@ -1,17 +1,12 @@
-
-      export interface PossibleTypesResultData {
-        possibleTypes: {
-          [key: string]: string[]
-        }
-      }
-      const result: PossibleTypesResultData = {
-  "possibleTypes": {
-    "Descendent": [
-      "Leaf",
-      "MentionDescendent",
-      "ParagraphDescendent"
-    ],
-    "GenericObject": [
+export interface PossibleTypesResultData {
+  possibleTypes: {
+    [key: string]: string[];
+  };
+}
+const result: PossibleTypesResultData = {
+  possibleTypes: {
+    Descendent: ["Leaf", "MentionDescendent", "ParagraphDescendent"],
+    GenericObject: [
       "Experiment",
       "Feature",
       "Label",
@@ -20,13 +15,9 @@
       "ROI",
       "Representation",
       "Sample",
-      "Stage"
+      "Stage",
     ],
-    "Node": [
-      "MentionDescendent",
-      "ParagraphDescendent"
-    ]
-  }
+    Node: ["MentionDescendent", "ParagraphDescendent"],
+  },
 };
-      export default result;
-    
+export default result;

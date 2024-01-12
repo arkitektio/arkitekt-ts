@@ -1,4 +1,4 @@
-# Arkitekt Typescript Client  
+# Arkitekt Typescript Client
 
 This repository contains the Code for the Arkitekt Typescript client,
 which provides convenience methods to integrate Arkitekt into React-based
@@ -85,6 +85,5 @@ function App() {
 ```
 
 This is a basic Arkitekt App, which will be able to connnect to a local Arkitekt Service, retrieve configuration from it (or negotiate
-to become a new app on the platform), and then authenticates the user via Oauth2 (using an oauth authorization-code grant). 
-Components within the "Easy Guard" will only be rendered once Arkitekt is connected. 
-
+to become a new app on the platform), and then authenticates the user via Oauth2 (using an oauth authorization-code grant).
+Components within the "Easy Guard" will only be rendered once Arkitekt is connected.

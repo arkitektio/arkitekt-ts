@@ -18,9 +18,7 @@ export const EasyGuard = ({
   return (
     <AppGuard fallback={noAppFallback}>
       <FaktsGuard fallback={notConnectedFallback}>
-        <HerreGuard fallback={notLoggedInFallback}>
-          {children}
-        </HerreGuard>
+        <HerreGuard fallback={notLoggedInFallback}>{children}</HerreGuard>
       </FaktsGuard>
     </AppGuard>
   );

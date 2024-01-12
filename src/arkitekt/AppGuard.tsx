@@ -15,7 +15,7 @@ export const AppGuard: React.FC<{
 
 export const appGuarded = <T extends {}>(
   Child: React.ComponentType<T>,
-  fallback?: React.ReactNode
+  fallback?: React.ReactNode,
 ) => {
   return (props: T) => (
     <AppGuard fallback={fallback}>

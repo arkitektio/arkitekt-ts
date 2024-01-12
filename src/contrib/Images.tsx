@@ -16,11 +16,5 @@ export const Images = () => {
   const { s3resolve } = useDatalayer();
 
   console.log(s3resolve("test"));
-  return (
-    <>
-      {data?.representations?.map((r: any) => (
-        <>{r.name}</>
-      ))}
-    </>
-  );
+  return <>{data?.representations?.map((r: any) => <>{r.name}</>)}</>;
 };

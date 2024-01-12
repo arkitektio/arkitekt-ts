@@ -1,49 +1,50 @@
-import { useState } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.css";
 import { EasyGuard, EasyProvider, useApp } from "./arkitekt";
 import { AutoConfiguration } from "./arkitekt/autos/AutoConfiguration";
 import { Callback } from "./arkitekt/components/Callback";
-import { RekuestGuard } from "@jhnnsrs/rekuest";
-import { HerreGuard } from "@jhnnsrs/herre";
 import { useArkitektConnect } from "./arkitekt/hooks/useArkitektConnect";
 import { useArkitektLogin } from "./arkitekt/hooks/useArkitektLogin";
 
 export const Test = () => {
   const { manifest } = useApp();
-  const { registeredEndpoints, load} = useArkitektConnect();
+  const { registeredEndpoints, load } = useArkitektConnect();
   const { login } = useArkitektLogin();
-
 
   return (
     <>
       <h1>{manifest.identifier}</h1>
-      <EasyGuard notConnectedFallback={<>
-        {registeredEndpoints.map((e) => {
-          return <p onClick={() => load({
-            endpoint: e
-          })}>{e.name}</p>
-        })}
-      
-      
-      </>
-
-      }
-        notLoggedInFallback={<>
-          <p onClick={() => login()}>Login</p>
-        </>}>
-      
-      
-      Hallo</EasyGuard>
-      <RekuestGuard>RekuestHere</RekuestGuard>
-      <HerreGuard>HerreHerre</HerreGuard>
+      <EasyGuard
+        notConnectedFallback={
+          <>
+            {registeredEndpoints.map((e) => {
+              return (
+                <button
+                  onClick={() =>
+                    load({
+                      endpoint: e,
+                    })
+                  }
+                >
+                  Connect to {e.name}
+                </button>
+              );
+            })}
+          </>
+        }
+        notLoggedInFallback={
+          <>
+            <button onClick={() => login()}>Login</button>
+          </>
+        }
+      >
+        Lets do something with this app
+      </EasyGuard>
     </>
   );
 };
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="App">
       <EasyProvider
@@ -51,7 +52,6 @@ function App() {
           version: "latest",
           identifier: "github.io.jhnnsrs.orkestrator",
           scopes: ["openid", "profile", "email"],
-
         }}
       >
         <AutoConfiguration wellKnownEndpoints={["127.0.0.1:8010"]} />

@@ -16,7 +16,7 @@ export const useArkitektLogin = () => {
       request: ArkitektLoginRequest = {
         faktsLokKey: "lok",
         redirectUri: undefined,
-      }
+      },
     ) => {
       if (!fakts) {
         throw new Error("Missing fakts");
@@ -60,7 +60,7 @@ export const useArkitektLogin = () => {
         ...request,
       });
     },
-    [fakts, login]
+    [fakts, login],
   );
 
   return {

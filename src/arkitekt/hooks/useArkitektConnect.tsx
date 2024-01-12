@@ -26,7 +26,7 @@ export const useArkitektConnect = () => {
       }
       return load(request as FaktsRequest);
     },
-    [load]
+    [load],
   );
 
   return {

@@ -8,7 +8,7 @@ describe("Provider test", () => {
     render(
       <AppProvider manifest={{ version: "h", identifier: "nffnf" }}>
         <h4>Content</h4>
-      </AppProvider>
+      </AppProvider>,
     );
 
     expect(screen.getByText(/Content/i)).toBeDefined();
