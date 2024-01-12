@@ -18,7 +18,7 @@ export const RekuestAutoConfigure = ({
   const { fakts } = useFakts();
 
   useEffect(() => {
-    let rekuest = fakts?.[key];
+    let rekuest = fakts?.[key] as { [key: string]: any } | undefined;
     if (token && rekuest) {
       configure({
         secure: rekuest.secure,

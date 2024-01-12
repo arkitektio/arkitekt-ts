@@ -24,9 +24,10 @@ export const DatalayerAutoConfigure: React.FC<{}> = ({
   const { configure } = useDatalayer();
 
   useEffect(() => {
-    if (client && fakts && fakts.minio) {
+    let minio = fakts?.minio as { [key: string]: any } | undefined;
+    if (client && minio) {
       configure({
-        endpointUrl: fakts.minio.endpoint_url,
+        endpointUrl: minio.endpoint_url,
         credentialsRetriever: async () => {
           let x = await client.query<RequestQuery>({
             query: requestDocument,
