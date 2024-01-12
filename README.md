@@ -12,7 +12,7 @@ yarn add @jhnnsrs/arkitekt
 
 ## Usage
 
-```
+```typescript
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.css";
 import { EasyGuard, EasyProvider, useApp } from "./arkitekt";
