@@ -18,7 +18,7 @@ export const MikroAutoConfigure = ({
   const { fakts } = useFakts();
 
   useEffect(() => {
-    let mikro = fakts?.[key];
+    let mikro = fakts?.[key] as { [key: string]: any } | undefined;
     if (token && mikro) {
       configure({
         secure: mikro.secure,

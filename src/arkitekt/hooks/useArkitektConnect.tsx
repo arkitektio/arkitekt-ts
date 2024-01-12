@@ -1,32 +1,36 @@
-import { FaktsRequest, useFakts, useLoadFakts } from "@jhnnsrs/fakts";
+import { FaktsRequest, useLoadFakts } from "@jhnnsrs/fakts";
 import { useApp } from "../AppContext";
+import { useCallback } from "react";
 
+export const useArkitektConnect = () => {
+  const { manifest } = useApp();
 
+  const { load, ...x } = useLoadFakts();
 
-export const useArkitektConnect = (request: Partial<FaktsRequest> = {
-requestedClientType: "website",
-requestPublic: true,
-retrieveTimeout: 2000,
-maxChallengeRetries: 10,
-challengeTimeout: 2000,
-requestedRedirectURIs: [
-    window.location.origin + "/callback"
-],  
-}) => {
+  const adaptive_load = useCallback(
+    (request: Partial<FaktsRequest> = {}) => {
+      if (!request.manifest) {
+        request.manifest = manifest;
+      }
 
-    const {manifest} = useApp();
+      if (!request.manifest.scopes) {
+        throw new Error("No scopes specified in manifest");
+      }
 
-    const {registeredEndpoints} = useFakts();
-    const x = useLoadFakts({
-        onProgress: (e) => {
-            console.log(e)
-        },
-        manifest,
-        ...request,
-    });
+      if (
+        request.requestedClientType == "website" &&
+        (!request.requestedRedirectURIs ||
+          request.requestedRedirectURIs.length === 0)
+      ) {
+        request.requestedRedirectURIs = [window.location.origin + "/callback"];
+      }
+      return load(request as FaktsRequest);
+    },
+    [load]
+  );
 
-    return {
-        registeredEndpoints,
-        ...x
-    }
-}
+  return {
+    ...x,
+    load: adaptive_load,
+  };
+};

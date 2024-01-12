@@ -14,7 +14,7 @@ export const AppContext = React.createContext<AppContextType>({
   manifest: {
     version: "0.0.0",
     identifier: "unknown",
-    scopes: ["openid"]
+    scopes: ["openid"],
   },
 });
 

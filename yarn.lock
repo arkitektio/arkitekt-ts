@@ -1184,10 +1184,10 @@
   dependencies:
     cancelable-promise "^4.3.0"
 
-"@jhnnsrs/fakts@^0.0.23":
-  version "0.0.23"
-  resolved "https://registry.yarnpkg.com/@jhnnsrs/fakts/-/fakts-0.0.23.tgz#6cb1202f45cdd468c35b9a746d76142dd510a0c4"
-  integrity sha512-w5o/1mVuli/upmAdjfBGwKMKH6oa0uvMYKgjDSlylVE+ZKxEKkGMqW8qtAQTQ3hppCeRUfJWH/PuK6Aj/ejGKw==
+"@jhnnsrs/fakts@^0.0.24":
+  version "0.0.24"
+  resolved "https://registry.yarnpkg.com/@jhnnsrs/fakts/-/fakts-0.0.24.tgz#0994ca4448ceb7b33e11868e3cc48dbfeda02841"
+  integrity sha512-lJIdY9iZMhOrn9cxblDG89ZKck6VVviVsXXIJvKTx/7AyJyruREMXWtGiR8yfvUH1+qAS87EUnP7oPwsy2VqVA==
   dependencies:
     any-signal "^4.1.1"
 
@@ -1200,12 +1200,11 @@
     graphql "16.6.0"
     subscriptions-transport-ws "^0.11.0"
 
-"@jhnnsrs/herre@^0.0.14":
-  version "0.0.14"
-  resolved "https://registry.yarnpkg.com/@jhnnsrs/herre/-/herre-0.0.14.tgz#a2b617be5a0c92579a6ca056d2a7afdaeb03e144"
-  integrity sha512-OaHn1Kx6EUYV2Lj+fnQhepa+feZ0kkt8eXqdc0rZQFDwnsptBbYJLnM32Xy9YbGMLmP96RSFqCKynXG4xfRyaw==
+"@jhnnsrs/herre@^0.0.19":
+  version "0.0.19"
+  resolved "https://registry.yarnpkg.com/@jhnnsrs/herre/-/herre-0.0.19.tgz#be67b8b665458008200aaaf4007443cbb9164662"
+  integrity sha512-Ul+jm4x7Erdv5rQskaDCNDXAsPe2AOZIHEhVbgKVv07UMi6cc8MvBRaeDaP8V/gLRaGbSLJQ6LA+Wcvj5ZZuIA==
   dependencies:
-    cancelable-promise "^4.3.1"
     crypto-js "^4.1.1"
 
 "@jhnnsrs/mikro@^0.0.9":
@@ -2007,11 +2006,6 @@ cancelable-promise@^4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/cancelable-promise/-/cancelable-promise-4.3.0.tgz#13059151a52622ff282df3d07c4838ac8de93086"
   integrity sha512-sh4IYH3YLhi1AlNIBeka4WqRIJ8m8msgc8Och0DFRY4rgf83UnhYD0hQ83to4M/lZ3TLzDIwQeQP6wcyA2JJow==
-
-cancelable-promise@^4.3.1:
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/cancelable-promise/-/cancelable-promise-4.3.1.tgz#957b62382435e74dfb2a038517f53205e0c631c6"
-  integrity sha512-A/8PwLk/T7IJDfUdQ68NR24QHa8rIlnN/stiJEBo6dmVUkD4K14LswG0w3VwdeK/o7qOwRUR1k2MhK5Rpy2m7A==
 
 caniuse-lite@^1.0.30001400:
   version "1.0.30001414"

@@ -18,7 +18,7 @@ export const FlussAutoConfigure = ({
   const { fakts } = useFakts();
 
   useEffect(() => {
-    let fluss = fakts?.[key];
+    let fluss = fakts?.[key] as { [key: string]: any } | undefined;
     if (token && fluss) {
       configure({
         secure: fluss.secure,
